@@ -1,6 +1,8 @@
 #include<iostream>
 #include <Eigen/Dense>
-
+#include <vector>
+using namespace std;
+using namespace Eigen;
 
 float PJcurvature(Eigen::Vector3f &x,Eigen::Vector3f y)
 {
@@ -27,7 +29,10 @@ int main(int argc, char *argv[])
     Eigen::Vector3f x ;
     Eigen::Vector3f y;
     float r = 3;
-    x << r*cos(2.0),r*cos(2.1),r*cos(2.2);
-    y << r*sin(2.0),r*sin(2.1),r*sin(2.2);
+//    x << r*cos(-2.0),r*cos(-2.3),r*cos(-2.7);
+//    y << r*sin(-2.0),r*sin(-2.3),r*sin(-2.7);
+    x << -84.52,-84.511,-84.497;
+    y << 61.067,61.071,61.078;
     std::cout << 1.0/PJcurvature(x,y) <<std::endl;
+
 }
